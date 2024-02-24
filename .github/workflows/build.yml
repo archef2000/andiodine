@@ -9,9 +9,11 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 8
+          java-version: 11
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 2.3.3
       - name: Execute Gradle build
         run: ./gradlew build
       - name: Archive build
